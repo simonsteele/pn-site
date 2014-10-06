@@ -1,3 +1,6 @@
-name: Your New Jekyll Site
+name: Programmer's Notepad
 markdown: redcarpet
-pygments: true
+highlighter: pygments
+url: http://www.pnotepad.org/
+redcarpet:
+    extensions: ["tables", "autolink", "with_toc_data", "no_intra_emphasis", "fenced_code_blocks", "hard_wrap"]
