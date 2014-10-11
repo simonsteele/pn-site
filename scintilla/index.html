@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>PN Development - Scintilla bits and pieces</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<STYLE>BODY {
+	BACKGROUND: #666666; COLOR: black; FONT-FAMILY: Verdana, Arial, sans-serif; MARGIN: 0px
+}
+.title {
+	COLOR: white; FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 32px; MARGIN-BOTTOM: 1px; MARGIN-LEFT: 20px; TEXT-TRANSFORM: uppercase
+}
+.links {
+	FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 11px
+}
+A.links:hover {
+	COLOR: white
+}
+A {
+	FONT-WEIGHT: bold; TEXT-DECORATION: none; FONT-SIZE: 11px
+}
+A:hover {
+	COLOR: red
+}
+.date {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold; MARGIN: 10px
+}
+.posts {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 12px; MARGIN: 10px
+}
+</STYLE>
+</HEAD>
+<BODY aLink="red" bgColor=#666666 link=#336699 vLink=#003366 marginheight="0" marginwidth="0">
+<div align="center"><br>
+<table border=0 cellPadding=0 cellSpacing=0 width="95%">
+	<tbody>
+	<tr>
+		<td bgColor=#336699 colSpan=2 height=65 vAlign="bottom">
+		<div class="title"><b>Scintilla Development</b></div>
+		</td>
+	</tr>
+	<tr>
+		<td bgColor=#cccccc vAlign="top" width=150>
+		<div align="center" class="posts">...Scintilla is an open source text editing component...
+		<br><br>
+		<a href="http://www.pnotepad.org"><img alt="PN Home" border=0 src="../images/pnbut2.gif" width="88" height="31"></a> 
+		<br><br> 
+		<a href="http://www.scintilla.org/" target="_top">Scintilla Home</a>
+		<br><br><br>
+		<script type="text/javascript"><!--
+google_ad_client = "pub-5879351191811983";
+google_alternate_color = "cccccc";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_channel ="7878428786";
+google_color_border = "2D5893";
+google_color_bg = "99AACC";
+google_color_link = "000000";
+google_color_url = "000099";
+google_color_text = "003366";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		
+	    </div>
+		</td>
+		<td bgColor="white">
+		<div class="posts">
+			<b>WTL Scintilla Control Wrappers</b>
+			<a href="../files/scintilla_wtl.zip">&lt;download release 1&gt;</a><br /><br />
+			<font color="#ff0000">Last Updated: 10/12/2002</font> - This is the WTL implementation of the
+			plain C++ wrapper classes below. All in one file (atlscintilla.h) the file provides CScintilla
+			and CScintillaWindowImpl. The zip file that you download also contains a sample project where
+			we simply include atlscintilla.h , and the change the base class that the view inherits from to
+			CScintillaWindowImpl. Drop the SciLexer.dll file in the build directory et voila! - a Scintilla view.
+			<br /><br />
+			These classes implement all the scintilla methods as do the wrappers below, although these methods
+			can be removed from the compile if you wish by setting a #define in atlscintilla.h.
+			<br /><br />
+			Please be gentle, this is a first release and there are some things that I'm not yet happy with.
+			For example, there are still some virtual functions in the CScintillaIF class and that's not really
+			in line with standard WTL window classes which use the "T* pT" method instead. There may also be bugs,
+			I've not tested this code much. Oh, and yes this is completely free source, just leave my name at the top!
+			<br /><br />
+			<b>C++ Scintilla Control Wrapper</b>
+			<a href="../files/scintilla_cpp.zip">&lt;download release 4&gt;</a><br><br>
+			<font color="#ff0000">Last Updated: 10/12/2002</font> - I began a project using 
+			Scintilla in C++, and quickly got very bored of typing in all of the
+			SendMessage commands. Having created a control for Scintilla in Delphi (see below), 
+			I wondered why not do a similar thing for C++. Ok, it doesn't sub-class the window or
+			anything clever like that yet (MFC and WTL windows coming soon), so message processing 
+			is still a bit manual, but I find this class allows me to drop Scintilla into a project in no time at all. 
+			<br /><br />
+			CScintilla implements all methods from scintilla.iface, which are created using a 
+			conversion of the python generator provided with Scintilla. It provides the code
+			from SciTE which deals with file loading and saving - which works quite well. The code
+			also provides brace highlighting and folding support - code all pretty much copied from SciTE.
+			Very little plumbing is required to get this thing going - see <tt>IsScintillaNotify</tt> and <tt>HandleNotify</tt>
+			member functions.
+			<br /><br />
+			Anyway, for now, give it a go! There aren't any instructions, but start out by looking at
+			index.html in the html directory, which contains a class reference for CScintilla (a bit out of date). 
+			The class should work well in both static build and dll load environments - see the 
+			<tt>STATIC_SCILEXER</tt> define. Oh, and yes this is completely free source, just leave my name at the top!
+			
+			<br /><br />
+			<b>Borland Delphi control wrapper for Scintilla:</b> 
+			<a href="../files/scintilla_pascal.zip">&lt;download version 1.4&gt;</a><br><br>
+			<font color="#ff0000">Last Updated: 10/03/2004</font> - 
+			Scintilla is a fairly standard windowed control and this wrapper is
+			fairly simple, a lot of it is generated using the included python
+			files.
+		   
+		    <br /><br />Another update from Kiriakos, the wrapper is now up
+			to date with Scintilla 1.56, provides for key command 
+			customization at design and run time, adds built in styling 
+			support for python, ruby, XML and HTML, and also includes a help
+			file. The release also fixes some bugs reported by users.
+		   
+			<br /><br />30/03/2003: This release adds even more work by Kiriakos Vlahos. 
+			Kiriakos added lots of code to make scintilla more delphi-friendly 
+			and much easier to use for new users. Finally, note that the SetFocus 
+			method of Scintilla is SetFocusEx for the wrapper because SetFocus is a 
+			useful method of TWinControl from which TScintilla derives.
+			
+			<br><br>09/03/2003: Uploaded much improved code thanks to Kiriakos Vlahos. Control
+            now works in design time, with a number of properties surfaced as delphi properties.
+            The download also includes a demonstration project.
+            
+            <br><br>13/12/2001: added a fix recommended by
+			Gertjan Schuurmans and Jeff Cogswell which fixes the flickering
+			and incorrect background repainting. Also added a Delphi port of
+			the Accessor class.
+		    
+			<br><br><font color="red">note::</font> you cannot configure the 
+			control until it's window has been created - you will cause a crash
+			otherwise. Oh, and yes this is completely free source, just leave my
+			name at the top!
+			
+			<br /><br />
+			<b>Wrapper Updating Code</b>
+			<a href="../files/scintilla_codemaker.zip">&lt;download wrapper updater&gt;</a><br /><br />
+			
+			<font color="#ff0000">Last Updated: 10/12/2002</font> - 
+			The above scintilla wrappers contain a large number of generated methods. These are
+			generated from a file distributed with scintilla called scintilla.iface - which is created
+			exactly for this purpose. This zip file contains the python code which updates the wrappers
+			to include the latest methods and values from scintilla. You will need python to run this!
+		   
+			<br><br>
+			<b>External pascal lexer, written in pascal.</b> 
+			<a href="../files/plexer.zip">&lt;download&gt;</a><br /><br />
+			External lexer support was recently integrated into Scintilla, and to
+			show that the creation of lexers is now supported in multiple 
+			languages, this file contains pascal source for a pascal lexer. It 
+			has only been compiled in Delphi 5 to test so far, but it should work
+			in other versions.
+			
+			<br /><br />
+			<b>Modifications to enable Static Building of Scintilla</b>
+			<a href="../files/vcbuild.zip">&lt;download modifications&gt;</a><br/><br/>
+			<font color="#ff0000">Revised: 10/01/2002</font> - For Visual C++, this modification adds a project
+			which builds Scintilla into a static library (.lib file) for win32. By default SCI_LEXER is enabled,
+			and the libs build into scilexer.lib and scilexerd.lib in the lib directory. I also changed the
+			vcbuild project to build into the bin directory.
+		   
+			<br><br>
+			<b>My Scintilla modifications:</b>
+			
+			<br><br><b>External lexer modifications</b><br>
+			&lt;now integrated&gt;<br><br>
+			I modified scintilla to allow the use of external lexers (lexers
+			in DLLs). The most recent changes involved changing the 
+			interface so that external lexers must be specifically loaded 
+			by the user rather than being discovered on loading.
+			
+			<br><br><b>Hotspot modifications</b><br>
+            &lt;now integrated&gt;<br><br>
+			I added support to Scintilla for hotspots, including:
+            <ul>
+            <li>Enable any style as a hot spot</li>
+            <li>Mouse-cursor changes to a hand when the mouse hovers over it. (win32 only so far)</li>
+            <li>Notification is sent when a hotspot is clicked, including position of hotspot and modifiers</li>
+            <li>Hot spot double-click notification.</li>
+			<li>Specify active hot spot fore colour, back colour and / or underline.</li>
+			</ul>
+			<br /><br />
+	  </div><br><br>
+	<br><br></td></tr></TBODY></TABLE></div></BODY></HTML>
