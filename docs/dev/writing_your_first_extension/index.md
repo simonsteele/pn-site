@@ -5,7 +5,7 @@ title: Writing Your First Extension
 
 # Writing Your First Extension
 
-[PyPN](http://www.pnotepad.org/add-ons/) provides a great way to add functionality to Programmer’s Notepad by writing simple Python code, but you might want to do something more advanced. For this there’s the Programmer’s Notepad [Extension SDK](http://www.pnotepad.org/developer/).
+[PyPN](http://www.pnotepad.org/add-ons/) provides a great way to add functionality to Programmer’s Notepad by writing simple Python code, but you might want to do something more advanced. For this there’s the Programmer’s Notepad [Extension SDK](https://github.com/simonsteele/pn/releases/download/v2.4/sdk-2.4.0.zip).
 
 The SDK lets you extend PN using C++, allowing you to react to editor events and provide new commands in the menu. PyPN is itself implemented as an extension using this same SDK, and you can use the SDK to provide support for other scripting languages too.
 
