@@ -20,13 +20,6 @@ title: Programmer's Notepad Documentation
   * [Text Clip Variables](text_clip_variables/)
   * [Text Clip with PyPN](text_clip_with_pypn/)
 
-**Pre 2.1.4:**
-
-Before 2.1.3 the text clips functionality was split between two features, Text Clips and Code Templates. Version 2.1.4 added variables support and changed the syntax for enhanced TextMate compatibility.
-
-  * [Legacy Text Clips](legacy_text_clips/)
-  * [Text Clips versus Code Templates](text_clips_versus_code_templates/)
-
 ## Tools
 
 Configuring Common Tools:
@@ -59,6 +52,7 @@ Configuring Common Tools:
 
 ## Developers
   * [How to Compile PN](dev/how_to_compile_pn/)
+  * [How to Release PN](dev/how_to_release_pn/)
   * [Building Boost Libs](dev/building_boost_libs/)
   * [Writing your First Extension](dev/writing_your_first_extension/)
   * [Updating Scintilla in Mercurial](dev/updating_scintilla_in_mercurial/)
