@@ -3,8 +3,6 @@ layout: up
 title: Translating Programmer's Notepad
 ---
 
-# Translating Programmer's Notepad
-
 Programmer's Notepad comes with a number of community created translations, and new contributions are welcome! The translations use the standard PO format files, which can be edited by a wide variety of tools. We recommend using [Poedit](http://www.poedit.net/).
 
 ## Steps to add a new language:
@@ -48,4 +46,3 @@ For this to work you'll need the msgmerge tool, I use the one bundled with the P
 
   - Run this: `msgmerge -o temp.po translations\<your translation>.po translations\pnlang_2057_en-GB.pot`
   - Copy temp.po over your original translation file if you're happy with the result
-

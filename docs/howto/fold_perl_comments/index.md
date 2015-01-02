@@ -3,7 +3,6 @@ layout: up
 title: Folding Perl Comments
 ---
 
-# Changing the Perl scheme to have folding comments
 Locate perl.scheme at Programmer's Notepad\schemes folder and edit it. Search for the line that starts the language declarations:
 
 ```xml

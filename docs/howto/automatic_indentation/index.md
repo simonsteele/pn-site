@@ -3,8 +3,6 @@ layout: up
 title: Automatic Indentation
 ---
 
-# Automatic Indentation
-
 After you've made your .scheme or .schemedef file (see [Add Support for Your Language]({{ site.url }}/howto/add_support_for_your_language)) there's still something missing from that authentic _professional_ feeling when programming with your newly defined language. For that you need to create an auto-indenter.
 
 Please note: You need to have **PyPN** installed for this to work! See [Install PyPN]({{ site.url }}/howto/install_pypn) for further instructions.
@@ -136,7 +134,7 @@ def tes_indent(c, doc):
     t_end = pos - 1
     txt = sci.GetText(t_start, t_end)
     kw = txt.split()[0].lower()
-    
+
     if kw in i_kws:
         c_ind = sci.GetLineIndentation(l_cur)
         p_ind = sci.GetLineIndentation(l_cur-1)

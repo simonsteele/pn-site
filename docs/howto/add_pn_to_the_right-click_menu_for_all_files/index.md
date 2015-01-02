@@ -3,7 +3,7 @@ layout: up
 title: Add PN to the right-click menu for all files
 ---
 
-# PN Shell Extension
+# Shell Extension
 
 The shell extension works on all 32-bit versions of Windows, and adds Programmer's Notepad to the right-click (context) menu for all files. To install the shell extension:
 

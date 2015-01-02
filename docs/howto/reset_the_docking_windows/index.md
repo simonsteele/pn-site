@@ -3,8 +3,6 @@ layout: up
 title: Reset the Docking Windows
 ---
 
-# Reset the Docking Windows
-
 If you're using PN from an installer, please remove this registry key to reset the UI placement options:
 
 HKEY_CURRENT_USER\Software\Echo Software\PN2\Interface Settings\default

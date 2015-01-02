@@ -3,8 +3,6 @@ layout: up
 title: Capture Compiler Output
 ---
 
-# Capture compiler output
-
 This mini-guide will show you how to capture the output of a tool such as a compiler or linker.
 
 ## Basic Settings

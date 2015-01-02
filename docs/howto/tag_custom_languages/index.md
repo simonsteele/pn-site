@@ -2,7 +2,7 @@
 layout: up
 title: Tagging Custom Languages
 ---
-# Tagging Custom Languages 
+
 Programmers Notepad uses [CTags](http://ctags.sourceforge.net/) to generate a list of tags for source files for supported languages. Obviously, CTags only supports a [finite set of languages](http://ctags.sourceforge.net/languages.html). Fortunately CTags allows the specification of additional languages through an external file.
 
 CTags needs 3 things to tag a new language.
