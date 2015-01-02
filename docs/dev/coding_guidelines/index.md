@@ -3,8 +3,6 @@ layout: up
 title: Coding Guidelines
 ---
 
-# Some Code Guidelines
-
 Here are some work-in-progress guidelines for the C++ used in Programmer's Notepad. Some are not followed across the whole code base, although efforts are being made to improve this.
 
 ### Naming

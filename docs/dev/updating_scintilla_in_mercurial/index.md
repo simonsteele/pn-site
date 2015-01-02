@@ -3,8 +3,6 @@ layout: up
 title: Updating Scintilla in Mercurial
 ---
 
-# Updating Scintilla in Mercurial
-
 **You need:**
 
   - PN tree

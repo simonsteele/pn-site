@@ -3,8 +3,6 @@ layout: up
 title: Building Boost Libs
 ---
 
-# How to build the Boost libraries that PN uses
-
 Copies of these required libraries are checked in to the source tree, so you should only need to do this to take a new Boost version.
 
 ## Building Boost Python for Multiple Python Versions

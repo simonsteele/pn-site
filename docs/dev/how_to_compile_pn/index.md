@@ -2,8 +2,6 @@
 layout: up
 title: How to Compile PN
 ---
-# How to Compile PN
-
 ## Requirements:
 
   * [Microsoft Visual Studio 2013 Community](http://www.visualstudio.com/en-us/news/vs2013-community-vs.aspx) (free)

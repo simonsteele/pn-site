@@ -2,8 +2,6 @@
 layout: up
 title: How to Release PN
 ---
-# How to Release PN
-
 ## Requirements:
 
   * [Working PN Build](http://www.pnotepad.org/docs/dev/how_to_compile_pn/)
