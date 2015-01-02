@@ -2,7 +2,6 @@
 layout: up
 title: XML Formatting Tools
 ---
-# XML Formatting Tools
 
 ## HTML Tidy
 

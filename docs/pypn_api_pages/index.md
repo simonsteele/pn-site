@@ -1,8 +1,7 @@
 ---
 layout: up
-title: PyPN API Pages
+title: PyPN API
 ---
-# PyPN API Description
 
 The API for Programmer's Notepad is based mostly upon three modules: **pn**, **scintilla**, and **glue**. The `pn` module serves as a base and provides some basic application functionality as well as access to the other APIs. The `scintilla` module provides access to the Scintilla editor. Finally, the `glue` module provides a way for scripts to bind themselves into the Programmer's Notepad event model. 
 
@@ -120,7 +119,7 @@ Functions for hooking into pn's event handling.<code python> import glue</code>
 | `glue.onModifiedChanged(modified, doc)` | Method called when the modified flag is changed. |
 | `glue.onWriteProtectChanged(protected, doc)` | Method called when the read only status of a document is changed. |
 | `glue.registerScript(f, group, scriptName)` | This is called by the script decorator to register a script. |
-| `glue.runScript(name)` | This is called by PN to run a script by name. 
+| `glue.runScript(name)` | This is called by PN to run a script by name.
 | `glue.startCapturingStdOut() : None` | PN calls this to start capturing stdout. (PN 2.1.5) |
 | `glue.startRecording()` | PN calls this to start recording a script, all recording actions are delegated to the Recorder class. |
 
@@ -150,7 +149,7 @@ no known data or methods.
 
 PyPN's interface to the Scintilla editor. `import scintilla`
 
-Most of the scintilla class' functions map directly to a Scintilla messages so you should also check the [Scintilla Documentation](http://www.scintilla.org/ScintillaDoc.html) for a more complete description of what the functions do. If you convert the function name to all caps and prefix `SCI_` then you will have the name of the Scintilla message that the function is based upon. For Example the function `GetAnchor()` maps to [SCI_GETANCHOR](http://www.scintilla.org/ScintillaDoc.html#SCI_GETANCHOR). 
+Most of the scintilla class' functions map directly to a Scintilla messages so you should also check the [Scintilla Documentation](http://www.scintilla.org/ScintillaDoc.html) for a more complete description of what the functions do. If you convert the function name to all caps and prefix `SCI_` then you will have the name of the Scintilla message that the function is based upon. For Example the function `GetAnchor()` maps to [SCI_GETANCHOR](http://www.scintilla.org/ScintillaDoc.html#SCI_GETANCHOR).
 
 For a list of the Scintilla message numbers you can look though the [scintilla interface](http://scintilla.hg.sourceforge.net/hgweb/scintilla/scintilla/file/tip/include/Scintilla.iface). These messages can be used with the Document's SendMessage function.
 
@@ -188,7 +187,7 @@ The Scintilla class is a library wrapper for the scintilla editor -- this means 
 | `BackTab() : None ` | Same as user pressing Shift+Tab in the the document editor. Moves current pos backwards based upon tabsize.|
 | `BeginUndoAction() : None ` | Mark an undo save point. Generally this comes in pairs with `EndUndoAction()` where everything done to the document between the `BeginUndoAction()` and `EndUndoAction()` can be undone. |
 | `BraceBadLight(pos) : None ` |  |
-| `BraceHighlight(pos, (int)maxReStyle) : None ` |  | 
+| `BraceHighlight(pos, (int)maxReStyle) : None ` |  |
 | `BraceMatch(int) : int ` | Will match braces on the following brace character: '(', ')', '[', ']', '{', '}', '<', and '>'. It will search forward if the brace at pos is an opening brace, backwards if it is a closing brace. The match will only occur if the style's match OR the matching brace is beyond the current styling. |
 | `CallTipActive() : bool ` | Returns true if a call tip window is currently open. |
 | `CallTipCancel() : None ` | Cancels any displayed call tip.  |

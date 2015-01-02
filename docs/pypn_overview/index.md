@@ -2,11 +2,10 @@
 layout: up
 title: PyPN Overview
 ---
-# PyPN Overview
 
 PyPN is an extension that allows you to use Python to script almost anything in PN.  This can be simple text formatting, or complex macros for automation.
 
-See [Install PyPN]({{ site.url }}/install_pypn/) for installation instructions.
+See [Install PyPN]({{ site.url }}docs/install_pypn/) for installation instructions.
 
 After PyPN is installed, go to View > Window > Scripts (or press Alt+F10).  You should be able to see the Scripts menu, with the sample scripts listed.
 
@@ -14,9 +13,9 @@ Double click on a line in the Scripts window to run that script.
 
 To edit the scripts, go to "\Program Files\Programmer's Notepad\Scripts" and look at `text.py`.  There you'll see the source code for the sample scripts, and you can add your own.  You may have to restart PN to show changes.
 
-## PyPN Scripting
+## Scripting
 
-The PyPN extension makes it pretty easy to add your own features to Programmer's Notepad. PyPN exposes the underlying Scintilla interface to Python and this results in a very powerful scripting ability. The PyPN programmer has the PN objects, Scintilla editor, and the entire installed Python library ready for import. 
+The PyPN extension makes it pretty easy to add your own features to Programmer's Notepad. PyPN exposes the underlying Scintilla interface to Python and this results in a very powerful scripting ability. The PyPN programmer has the PN objects, Scintilla editor, and the entire installed Python library ready for import.
 
 ## Getting Started
 
@@ -72,44 +71,44 @@ Save this file as `HelloPN.py` inside of the `<Programmers Notepad Home Dir>\scr
 
 Taking a look at the method just defined:
 
-```
-python""" Say Hello To Programmer's Notepad """
+```python
+""" Say Hello To Programmer's Notepad """
 ```
 
 The three quotes on an empty line begins a documentation comment. So this line aids in documenting what the script does.
 
-```
+```python
 pythonnewDoc = pn.NewDocument(None)
 ```
 
-This line instructs PN to create a new document with no schema. Had we used `pn.NewDocument("Python")` we would have created a new Python document. Had we used `pn.CurrentDoc()` we not have created a new document but found a reference to the current document -- allowing us to append our message to the end of whatever document was currently selected. 
+This line instructs PN to create a new document with no schema. Had we used `pn.NewDocument("Python")` we would have created a new Python document. Had we used `pn.CurrentDoc()` we not have created a new document but found a reference to the current document -- allowing us to append our message to the end of whatever document was currently selected.
 
-```
-pythoneditor = scintilla.Scintilla(newDoc)
+```python
+editor = scintilla.Scintilla(newDoc)
 ```
 
 To edit documents we need access to the Scintilla interface. This line creates a Scintilla editor object for the document we just created. We need an editor object to access the text of a document.
 
-```
-pythonmessage = "Hello Programmer's Notepad!" 
+```python
+message = "Hello Programmer's Notepad!"
 ```
 
 This created a string with our message text in it. We will use this string to insert our message into the document.
 
-```
-pythoneditor.BeginUndoAction()
+```python
+editor.BeginUndoAction()
 ```
 
 It is never any fun when an editor preforms an action that cannot be undone. This line will establish an "undo point" so that the user can undo the operation that our script did to the document. The user will be able to undo any operations preformed between this point and when the `EndUndoAction()` is called. In this case, pressing Ctrl-Z on the new document should remove our message.
 
-```
-pythoneditor.AppendText(len(message), message)
+```python
+editor.AppendText(len(message), message)
 ```
 
 This line will append our message to the end of the document. The `AppendText(len, text)` function takes two arguments. The first parameter is the number of characters you would like it to take from the `text` string provided in the second parameter.
 
-```
-pythoneditor.EndUndoAction()
+```python
+editor.EndUndoAction()
 ```
 
 This line will mark and end of undo operations. It is advisable to ensure that you always make changes to documents inside of an undo block so that the user can revert any changes should they be disappointed in the results.
@@ -127,4 +126,3 @@ For a list of user generated scripts please see the [List of User-Submitted PyPN
 ## PyPn API
 
 The [PyPN API]({{ site.url }}/pypn_api_pages/) pages.
-
