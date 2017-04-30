@@ -19,3 +19,5 @@ title: How to Release PN
   - Edit deploy.bat to fix the path to nant.exe.
   - Run deploy.bat with the desired version, e.g.: `deploy 2.4.1`
   - If everything works ok, installer will be built into the dist directory
+  - Generate a hash of the installer to post on the download page:
+    `$(CertUtil -hashfile .\pn2421440_multilang.exe SHA256)[1] -replace " ",""`
