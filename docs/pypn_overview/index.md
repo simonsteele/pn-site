@@ -125,4 +125,4 @@ For a list of user generated scripts please see the [List of User-Submitted PyPN
 
 ## PyPn API
 
-The [PyPN API]({{ site.url }}/pypn_api_pages/) pages.
+The [PyPN API]({{ site.url }}docs/pypn_api_pages/) pages.
